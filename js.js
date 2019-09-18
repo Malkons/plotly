@@ -3,6 +3,8 @@ var verticalArr = [];
 
 var horizontalArr = [];
 
+var colorArr = [];
+
 function verticalAxis(value) {
   verticalArr = [];
   verticalArr.push(value);
@@ -17,6 +19,13 @@ function horizontalAxis(value) {
   $("#horizontal").text("Horizontal Axis set to: " + horizontalArr);
 };
 
+function colorAxis(value) {
+  colorArr = [];
+  colorArr.push(value);
+  console.log("Color Axis: " + colorArr);
+  $("#color").text("Color Axis set to: " + colorArr);
+};
+
 function makeplot() {
   Plotly.d3.csv("https://raw.githubusercontent.com/plotly/datasets/master/auto-mpg.csv", function (data) { processData(data) });
 };
@@ -24,19 +33,21 @@ function makeplot() {
 function processData(allRows) {
   var vertical = verticalArr[0];
   var horizontal = horizontalArr[0];
+  var color = colorArr[0];
   console.log(allRows);
-  var x = [], y = [], standard_deviation = [];
+  var x = [], y = [], colorPlot = [];
 
   for (var i = 0; i < allRows.length; i++) {
     row = allRows[i];
     x.push(row[horizontal]);
     y.push(row[vertical]);
+    colorPlot.push(row[color]);
   }
-  console.log('X', x, 'Y', y, 'SD', standard_deviation);
-  makePlotly(x, y, standard_deviation);
+  console.log('X', x, 'Y', y, 'color plot', colorPlot);
+  makePlotly(x, y, colorPlot);
 }
 
-function makePlotly(x, y, standard_deviation) {
+function makePlotly(x, y, colorPlot) {
   var vertical = verticalArr[0];
   var horizontal = horizontalArr[0];
   var plotDiv = document.getElementById("plot");
@@ -44,8 +55,10 @@ function makePlotly(x, y, standard_deviation) {
     y: y,
     x: x,
     mode: "markers",
-    type: "scatter"
-
+    type: "scatter",
+    marker: {
+      color: colorPlot,
+    }
   }];
 
   Plotly.newPlot('myDiv', traces,
