@@ -63,7 +63,7 @@ function makePlotly(x, y, colorPlot) {
 
   Plotly.newPlot('myDiv', traces,
     {
-      title: vertical + " vs " + horizontal,
+      title: horizontal + " vs " + vertical,
       xaxis: { title: horizontal },
       yaxis: { title: vertical }
     });
