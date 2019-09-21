@@ -9,21 +9,21 @@ function verticalAxis(value) {
   verticalArr = [];
   verticalArr.push(value);
   console.log("vertical Axis: " + verticalArr);
-  $("#vertical").text("Vertical Axis set to: " + verticalArr);
+  $("#vertical").text("Dependent Variable set to: " + verticalArr);
 };
 
 function horizontalAxis(value) {
   horizontalArr = [];
   horizontalArr.push(value);
   console.log("horizontal Axis: " + horizontalArr);
-  $("#horizontal").text("Horizontal Axis set to: " + horizontalArr);
+  $("#horizontal").text("Independent Variable set to: " + horizontalArr);
 };
 
 function colorAxis(value) {
   colorArr = [];
   colorArr.push(value);
   console.log("Color Axis: " + colorArr);
-  $("#color").text("Color Axis set to: " + colorArr);
+  $("#color").text("Color Variable set to: " + colorArr);
 };
 
 function makeplot() {
