@@ -1,9 +1,9 @@
 
 var verticalArr = [];
-
 var horizontalArr = [];
-
 var colorArr = [];
+
+$(".plot").hide("fast");
 
 function verticalAxis(value) {
   verticalArr = [];
@@ -27,6 +27,8 @@ function colorAxis(value) {
 };
 
 function makeplot() {
+
+
   Plotly.d3.csv("https://raw.githubusercontent.com/plotly/datasets/master/auto-mpg.csv", function (data) { processData(data) });
 };
 
@@ -50,7 +52,9 @@ function processData(allRows) {
 function makePlotly(x, y, colorPlot) {
   var vertical = verticalArr[0];
   var horizontal = horizontalArr[0];
+  var color = colorArr[0];
   var plotDiv = document.getElementById("plot");
+
   var traces = [{
     y: y,
     x: x,
@@ -58,16 +62,17 @@ function makePlotly(x, y, colorPlot) {
     type: "scatter",
     marker: {
       color: colorPlot,
-    }
+      showscale: true,
+    },
   }];
 
   Plotly.newPlot('myDiv', traces,
     {
-      title: horizontal + " vs " + vertical,
+      title: horizontal + " vs " + vertical + " vs " + color,
       xaxis: { title: horizontal },
       yaxis: { title: vertical }
     });
-
+  $(".plot").show("fast");
 };
 
 //makeplot();

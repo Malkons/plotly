@@ -10,3 +10,16 @@
 .dropdown {
     display: inline-flex;
 }
+
+#myDiv {
+    display: flex;
+    justify-content: center;
+}
+
+.dropdown-menu.show {
+    display: inline-flex;
+}
+
+.button {
+    margin-right: 5px;
+}

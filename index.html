@@ -10,11 +10,14 @@
 </head>
 
 <body>
+    <br>
     <div class="container">
         <div class="row">
             <div class="col">
-                <div id="myDiv">
-                    <!-- Plotly chart will be drawn inside this DIV -->
+                <div class="card shadow plot">
+                    <div id="myDiv">
+                        <!-- Plotly chart will be drawn inside this DIV -->
+                    </div>
                 </div>
             </div>
         </div>
@@ -23,7 +26,7 @@
             <div class="col">
                 <div class="card">
                     <div class="card-body info">
-                        <button class="model-year margin" onclick="makeplot()">Draw Graph</button>
+                        <button class="model-year margin btn btn-success" onclick="makeplot()">Draw Graph</button>
                         <div id="vertical" class="card-text margin"></div>
                         <div id="horizontal" class="card-text margin"></div>
                         <div id="color" class="card-text margin"></div>
@@ -35,60 +38,69 @@
         <div class="row">
             <div class="col">
                 <div class="dropdown">
-                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2"
-                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <button class="btn btn-info dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">
                         Dependent Variable
                     </button>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
-                        <button value="mpg" class="mpg" onclick="verticalAxis(value)">MPG</button>
-                        <button value="cylinders" class="cylinders" onclick="verticalAxis(value)">Cylinders</button>
-                        <button value="displacement" class="displacement"
+                        <button value="mpg" class="button btn btn-info" onclick="verticalAxis(value)">MPG</button>
+                        <button value="cylinders" class="button btn btn-info"
+                            onclick="verticalAxis(value)">Cylinders</button>
+                        <button value="displacement" class="button btn btn-info"
                             onclick="verticalAxis(value)">Displacement</button>
-                        <button value="horsepower" class="horsepower" onclick="verticalAxis(value)">Horsepower</button>
-                        <button value="weight" class="weight" onclick="verticalAxis(value)">Weight</button>
-                        <button value="acceleration" class="acceleration"
+                        <button value="horsepower" class="button btn btn-info"
+                            onclick="verticalAxis(value)">Horsepower</button>
+                        <button value="weight" class="button btn btn-info" onclick="verticalAxis(value)">Weight</button>
+                        <button value="acceleration" class="button btn btn-info"
                             onclick="verticalAxis(value)">Acceleration</button>
-                        <button value="model-year" class="model-year" onclick="verticalAxis(value)">Model-year</button>
+                        <button value="model-year" class="button btn btn-info"
+                            onclick="verticalAxis(value)">Model-year</button>
                     </div>
                 </div>
                 <div class="dropdown">
-                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2"
+                    <button class="btn btn-warning dropdown-toggle" type="button" id="dropdownMenu2"
                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Independent Variable
                     </button>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
-                        <button value="mpg" class="mpg" onclick="horizontalAxis(value)">MPG</button>
-                        <button value="cylinders" class="cylinders" onclick="horizontalAxis(value)">Cylinders</button>
-                        <button value="displacement" class="displacement"
+                        <button value="mpg" class="button btn btn-warning" onclick="horizontalAxis(value)">MPG</button>
+                        <button value="cylinders" class="button btn btn-warning"
+                            onclick="horizontalAxis(value)">Cylinders</button>
+                        <button value="displacement" class="button btn btn-warning"
                             onclick="horizontalAxis(value)">Displacement</button>
-                        <button value="horsepower" class="horsepower"
+                        <button value="horsepower" class="button btn btn-warning"
                             onclick="horizontalAxis(value)">Horsepower</button>
-                        <button value="weight" class="weight" onclick="horizontalAxis(value)">Weight</button>
-                        <button value="acceleration" class="acceleration"
+                        <button value="weight" class="button btn btn-warning"
+                            onclick="horizontalAxis(value)">Weight</button>
+                        <button value="acceleration" class="button btn btn-warning"
                             onclick="horizontalAxis(value)">Acceleration</button>
-                        <button value="model-year" class="model-year"
+                        <button value="model-year" class="button btn btn-warning"
                             onclick="horizontalAxis(value)">Model-year</button>
                     </div>
                 </div>
                 <div class="dropdown">
-                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2"
+                    <button class="btn btn-secondary dropdown-toggle" type="button btn btn-secondary" id="dropdownMenu2"
                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Color Variable
                     </button>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
-                        <button value="mpg" class="mpg" onclick="colorAxis(value)">MPG</button>
-                        <button value="cylinders" class="cylinders" onclick="colorAxis(value)">Cylinders</button>
-                        <button value="displacement" class="displacement"
+                        <button value="mpg" class="button btn btn-secondary" onclick="colorAxis(value)">MPG</button>
+                        <button value="cylinders" class="button btn btn-secondary"
+                            onclick="colorAxis(value)">Cylinders</button>
+                        <button value="displacement" class="button btn btn-secondary"
                             onclick="colorAxis(value)">Displacement</button>
-                        <button value="horsepower" class="horsepower" onclick="colorAxis(value)">Horsepower</button>
-                        <button value="weight" class="weight" onclick="colorAxis(value)">Weight</button>
-                        <button value="acceleration" class="acceleration"
+                        <button value="horsepower" class="button btn btn-secondary"
+                            onclick="colorAxis(value)">Horsepower</button>
+                        <button value="weight" class="button btn btn-secondary"
+                            onclick="colorAxis(value)">Weight</button>
+                        <button value="acceleration" class="button btn btn-secondary"
                             onclick="colorAxis(value)">Acceleration</button>
-                        <button value="model-year" class="model-year" onclick="colorAxis(value)">Model-year</button>
+                        <button value="model-year" class="button btn btn-secondary"
+                            onclick="colorAxis(value)">Model-year</button>
                     </div>
                 </div>
             </div>
         </div>
-        <script type="text/javascript" src="popper.js"></script>
+
         <script type="text/javascript" src="js.js"></script>
 </body>
