@@ -60,6 +60,7 @@ function makePlotly(x, y, colorPlot) {
     x: x,
     mode: "markers",
     type: "scatter",
+    text: colorPlot,
     marker: {
       color: colorPlot,
       showscale: true,
@@ -67,7 +68,6 @@ function makePlotly(x, y, colorPlot) {
         title: color,
       },
     },
-
   }];
 
 
