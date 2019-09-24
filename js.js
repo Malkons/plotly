@@ -9,21 +9,21 @@ function verticalAxis(value) {
   verticalArr = [];
   verticalArr.push(value);
   console.log("vertical Axis: " + verticalArr);
-  $("#vertical").text("Dependent Variable set to: " + verticalArr);
+  $("#vertical").html("Dependent Variable set to: " + "<strong>" + verticalArr + "</strong>");
 };
 
 function horizontalAxis(value) {
   horizontalArr = [];
   horizontalArr.push(value);
   console.log("horizontal Axis: " + horizontalArr);
-  $("#horizontal").text("Independent Variable set to: " + horizontalArr);
+  $("#horizontal").html("Independent Variable set to: " + "<strong>" + horizontalArr + "</strong>");
 };
 
 function colorAxis(value) {
   colorArr = [];
   colorArr.push(value);
   console.log("Color Axis: " + colorArr);
-  $("#color").text("Color Variable set to: " + colorArr);
+  $("#color").html("Color Variable set to: " + "<strong>" + colorArr + "</strong>");
 };
 
 function makeplot() {
@@ -63,8 +63,14 @@ function makePlotly(x, y, colorPlot) {
     marker: {
       color: colorPlot,
       showscale: true,
+      colorbar: {
+        title: color,
+      },
     },
+
   }];
+
+
 
   Plotly.newPlot('myDiv', traces,
     {
